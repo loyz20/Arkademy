@@ -1,0 +1,16 @@
+<html>
+    <body>        
+        <form>
+            <input type="text" id="input" placeholder="Masukan Nomor"/></br>
+            <input type="submit" onclick="replace()" />
+        </form>
+        <p id="output"></p>
+        <script>
+            function replace() {
+                var str = document.getElementById("input").value; 
+                var res = str.replace("0", "");
+                alert(res);
+            }
+        </script>
+    </body>
+</html>

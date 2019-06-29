@@ -1,0 +1,37 @@
+<html>
+    <body>
+        <script>
+            var tinggi = 8;
+            var kolom = 14;
+
+            for (i = 1; i < tinggi; i++) {
+                switch (i) {
+                    case 1:
+                        for (a = 1; a < kolom; a++) {
+                            if (a%2==0){
+                                document.write('&nbsp;&nbsp');
+                            }else {
+                                document.write('*');
+                            }
+                        }
+                        break;
+                    case i%2==0:
+                        for (a = 1; a < kolom; a++) {
+                            document.write('&nbsp;&nbsp');
+                        }
+                        break;
+                    default:
+                        for (a = 1; a < kolom; a++) {
+                            if (a==i || a==kolom-i) {
+                                document.write('*');
+                            } else {
+                                document.write('&nbsp;&nbsp');
+                            }
+                        }
+                        break;
+                }
+                document.write('<br>');
+            }
+        </script>
+    </body>
+</html>

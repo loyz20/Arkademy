@@ -1,0 +1,78 @@
+<html>
+    <body>        
+        <form>
+            <select id="musim">
+                <option value="1" selected>Semi</option>
+                <option value="2">Panas</option>
+                <option value="3">Gugur</option>
+                <option value="4">Dingin</option>
+            </select>
+            <input type="number" id="tahun" placeholder="Tahun"/></br>
+            <input type="submit" onclick="hitungPohon()" />
+        </form>
+        <script>
+            var tinggi = 1;
+            var awal = 2021;
+
+            var semi = 1;
+            var panas = 3;
+            var gugur = 15;
+            var dingin = 0.5;
+
+            function hitungPohon() {
+                musim = document.getElementById('musim').value;
+                tahun = document.getElementById('tahun').value;
+                
+                if (musim!=null && tahun!=null) {
+                    hasil = tahun - awal;
+                    if (hasil > 0) {
+                        for (i = 0; i < hasil; i++) {
+                            tinggi += semi;
+                            tinggi += tinggi *panas;
+                            tinggi += tinggi * 0,15;
+                            tinggi += tinggi * 0,5;
+                        }
+
+                        switch (musim) {
+                            case 1:
+                                tinggi -= tinggi * 0,5;
+                                tinggi -= tinggi * 0,15;
+                                tinggi -= tinggi *panas;
+                                break;
+                            case 2:
+                                tinggi -= tinggi * 0,5;
+                                tinggi -= tinggi * 0,15;
+                                break;
+                            case 3:
+                                tinggi -= tinggi * 0,5;
+                                break;
+                        }
+                    } else {
+                        switch (musim) {
+                            case 1:
+                                tinggi += semi;
+                                break;
+                            case 2:
+                                tinggi += semi;
+                                tinggi += tinggi *panas;
+                                break;
+                            case 3:
+                                tinggi += semi;
+                                tinggi += tinggi *panas;
+                                tinggi += tinggi * 0,15;
+                                break;
+                            case 3:
+                                tinggi += semi;
+                                tinggi += tinggi *panas;
+                                tinggi += tinggi * 0,15;
+                                tinggi += tinggi * 0,5;
+                                break;
+                        }
+                    }
+                }
+
+                alert("Tinggi Pohon Pada Tahun : "+tahun+" adalah "+tinggi);
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <form action="" onsubmit="validasi()">
+        <input type="text" id="email" placeholder="Email"/></br>
+        <input type="text" id="telp" placeholder="Nomor Ponsel"/></br>
+        <input type="text" id="username" placeholder="Username" /></br>
+        <input type="password" id="password" placeholder="Password" /></br>
+        <input type="submit" />
+    </form>
+
+    <script>
+        function cekEmail(nilai, pesan) {
+            var email = /^([a-zA-Z0-9_.+-])+@(([a-zA-Z0-9-])+.)+([a-zA-Z0-9]{2,4})+$/;
+            if(nilai.value.match(email)) {
+                return true;
+            }
+            else {
+                alert(pesan);
+                nilai.focus();
+                return false;
+            }
+        }
+
+        function cekNumber(nilai, pesan) {
+            var phone = /^[+]+62+([0-9]{8,15})$/;
+            if(nilai.value.match(phone)) {
+                return true;
+            } else {
+                alert(pesan);
+                nilai.focus();
+                return false;
+            }
+        }
+
+        function cekUsername(nilai, pesan) {
+            var username = /^[a-z]{5,9}$/;
+            if(nilai.value.match(username)) {
+                return true;
+            } else {
+                alert(pesan);
+                nilai.focus();
+                return false;
+            }
+        }
+
+        function cekPassword(nilai, pesan) {
+            var password = /^(?=.*[a-z])(?=.*[A-Z])(?=.*#)(?=.*[#$^+=!*()@%&]).{8}$/g;
+            if(nilai.value.match(password)) {
+                return true;
+            } else {
+                alert(pesan);
+                nilai.focus();
+                return false;
+            }
+        }
+
+
+        function validasi() {
+            cekEmail(document.getElementById('email'), 'Email tidak benar!!');
+            cekNumber(document.getElementById('telp'), 'Nomor ponsel tidak benar!!');
+            cekUsername(document.getElementById('username'), 'Username tidak benar!!');
+            cekPassword(document.getElementById('password'), 'Password harus kombinasi dari huruf kecil, huruf besar, angka, dan karakter spesial dan harus ada karakter #!!');
+        }
+    </script>
+</body>
+</html>

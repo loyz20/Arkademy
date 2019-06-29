@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+<pre id="biodata"></pre>
+<script>
+    function data() {
+        var bio = {
+            name: "Mujahid Asari",
+            age: 25,
+            address: "Tasikmalaya",
+            hobbies: ["futsal", "coding"],
+            is_marries: false,
+            list_school: [
+                {SD: {name: "SDN TUGU 3 Kota Tasikmalaya", year_in:2000, year_out:2006}},
+                {SMP: {name: "SMP N 3 Kota Tasikmalaya", year_in:2006, year_out:2009}},
+                {SMK: {name: "SMK TI Dadaha Informatika", year_in:2009, year_out:2012}},
+                {S1: {name: "STMIK DCI Tasikmalaya", year_in:2014, year_out:2018}}
+            ],
+            skills: [
+                {skill_name: "javascript", level: "beginer"},
+                {skill_name: "php", level: "advanced"},
+                {skill_name: "html", level: "advanced"},
+                {skill_name: "css", level: "advanced"}
+            ],
+            interest_in_coding: true
+        };   
+        
+        let myJson = JSON.stringify(bio, undefined, 2);
+        return myJson;
+    }
+
+    document.getElementById("biodata").innerHTML = data();
+    console.log(data());
+</script>
+</body>
+</html>
